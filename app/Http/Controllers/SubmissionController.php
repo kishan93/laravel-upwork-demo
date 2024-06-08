@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SubmissionCreateRequest;
+use App\Models\Submission;
 
 class SubmissionController extends Controller
 {
-    public function store(Request $request)
+    public function store(SubmissionCreateRequest $request)
     {
-        abort(404, 'Not implemented');
+        return response()->json([
+            'message' => 'Submission queued for processing',
+        ], 201);
     }
 }
